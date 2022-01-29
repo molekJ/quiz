@@ -61,5 +61,45 @@
           "is_correct": true
         }
       ]
+    },  {
+      "question": "Zielony owoc:",
+      "answers": [
+        {
+          "answer": "Banan",
+          "is_correct": false
+        },
+        {
+          "answer": "Mandarynka",
+          "is_correct": false
+        },
+        {
+          "answer": "Malina",
+          "is_correct": false
+        },
+        {
+          "answer": "Kiwi",
+          "is_correct": true
+        }
+      ]
+    }, {
+      "question": "Sąsiadem Polskie NIE jest:",
+      "answers": [
+        {
+          "answer": "Ukraina",
+          "is_correct": false
+        },
+        {
+          "answer": "Włochy",
+          "is_correct": true
+        },
+        {
+          "answer": "Białoruś",
+          "is_correct": false
+        },
+        {
+          "answer": "Słowacja",
+          "is_correct": false
+        }
+      ]
     }
   ]

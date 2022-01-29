@@ -15,19 +15,20 @@ function App() {
     const questionsPromise = GetQuestions();
     questionsPromise.then((res) => {
       setQuestions(res);
-      console.log(res);
+      setIsLoaded(true);
     });
   }, []);
 
-  const [questions, setQuestions] = useState<QuestionInterface[] | []>([]);
+  const [questions, setQuestions] = useState<QuestionInterface[]>([]);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   return (
     <Container>
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<SplashScreen />} />
-          <Route path="/quiz" element={<QuizScreen />} />
+          <Route path="/" element={<SplashScreen isLoaded={isLoaded} />} />
+          <Route path="/quiz" element={<QuizScreen questions={questions} />} />
           <Route path="/summary" element={<SummaryScreen />} />
         </Routes>
       </Router>

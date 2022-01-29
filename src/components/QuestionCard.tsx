@@ -5,7 +5,6 @@ export const QuestionCard: React.FC<QuestionInterface> = ({
   question,
   answers,
 }) => {
-  console.log(answers);
   return (
     <>
       <Card className="splash-screen ">
@@ -14,7 +13,15 @@ export const QuestionCard: React.FC<QuestionInterface> = ({
             <Form.Label>{question}</Form.Label>
             {answers.map((el) => {
               return (
-                <Form.Check name={question} label={el.answer} type="radio" />
+                <Form.Check
+                  name={question}
+                  label={el.answer}
+                  type="radio"
+                  onChange={(e) => {
+                    console.log(e.target);
+                    console.log(el.is_correct);
+                  }}
+                />
               );
             })}
           </Form.Group>
