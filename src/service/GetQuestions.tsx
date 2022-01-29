@@ -1,11 +1,7 @@
 import questions from "../data/questions.json";
-
-export const GetQuestions = () => {
-  const dataFromJson = JSON.stringify(questions);
-
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res(dataFromJson);
-    }, 1000);
+import { QuestionInterface } from "../types/interfaces";
+export const GetQuestions = (): Promise<QuestionInterface[]> => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(questions), 1000);
   });
 };

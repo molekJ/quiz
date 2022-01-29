@@ -8,17 +8,18 @@ import { Container } from "react-bootstrap";
 import { GetQuestions } from "./service/GetQuestions";
 import { useEffect, useState } from "react";
 
+import { QuestionInterface } from "./types/interfaces";
+
 function App() {
   useEffect(() => {
     const questionsPromise = GetQuestions();
-
     questionsPromise.then((res) => {
-      // setQuestions(res);
+      setQuestions(res);
       console.log(res);
     });
   }, []);
 
-  const [questions, setQuestions] = useState();
+  const [questions, setQuestions] = useState<QuestionInterface[] | []>([]);
 
   return (
     <Container>

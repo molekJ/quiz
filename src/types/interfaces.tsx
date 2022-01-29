@@ -1,7 +1,3 @@
-export interface DataQuestionsInterface {
-  dataQuestions: QuestionInterface[];
-}
-
 export interface QuestionInterface {
   question: string;
   answers: AnswerInterface[];
@@ -9,5 +5,5 @@ export interface QuestionInterface {
 
 export interface AnswerInterface {
   answer: string;
-  isCorrect: boolean;
+  is_correct: boolean;
 }
