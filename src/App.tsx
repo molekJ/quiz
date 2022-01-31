@@ -39,7 +39,12 @@ function App() {
               />
             }
           />
-          <Route path="/summary" element={<SummaryScreen />} />
+          <Route
+            path="/summary"
+            element={
+              <SummaryScreen userAnswers={userAnswers} questions={questions} />
+            }
+          />
         </Routes>
       </Router>
     </Container>
