@@ -2,6 +2,7 @@ import { Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { QuestionInterface } from "../types/interfaces";
+import { Container, Row, Col } from "react-bootstrap";
 
 interface IsLoaded {
   isLoaded: boolean;

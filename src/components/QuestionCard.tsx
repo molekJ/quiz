@@ -1,25 +1,33 @@
-import { QuestionInterface } from "../types/interfaces";
+import { QuestionCardInterface } from "../types/interfaces";
 import { Card, Form } from "react-bootstrap";
 
-export const QuestionCard: React.FC<QuestionInterface> = ({
+export const QuestionCard = ({
   question,
-  answers,
-}) => {
+  setUserAnswers,
+  questionId,
+}: QuestionCardInterface) => {
+  const onChange = (questionId: number, answerId: number) => {
+    setUserAnswers((old) => {
+      return { ...old, [questionId]: answerId };
+    });
+  };
+
   return (
     <>
       <Card className="splash-screen ">
         <Card.Body>
           <Form.Group>
-            <Form.Label>{question}</Form.Label>
-            {answers.map((el) => {
+            <pre>{questionId}</pre>
+            <Form.Label>{question.question}</Form.Label>
+            {question.answers.map((el, index) => {
               return (
                 <Form.Check
-                  name={question}
+                  name={question.question}
                   label={el.answer}
                   type="radio"
-                  onChange={(e) => {
-                    console.log(e.target);
-                    console.log(el.is_correct);
+                  value={index}
+                  onClick={() => {
+                    onChange(questionId, index);
                   }}
                 />
               );

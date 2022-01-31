@@ -1,5 +1,21 @@
 .quiz-screen {
-  color: red;
+  div {
+  }
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
+.disabled-link {
+  pointer-events: none;
 }
 
 // jedna klasa, dziedziczenie

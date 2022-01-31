@@ -8,7 +8,7 @@ import { Container } from "react-bootstrap";
 import { GetQuestions } from "./service/GetQuestions";
 import { useEffect, useState } from "react";
 
-import { QuestionInterface } from "./types/interfaces";
+import { QuestionInterface, UserAsnwersType } from "./types/interfaces";
 
 function App() {
   useEffect(() => {
@@ -21,6 +21,7 @@ function App() {
 
   const [questions, setQuestions] = useState<QuestionInterface[]>([]);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [userAnswers, setUserAnswers] = useState<UserAsnwersType>({});
 
   return (
     <Container>
@@ -28,7 +29,16 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<SplashScreen isLoaded={isLoaded} />} />
-          <Route path="/quiz" element={<QuizScreen questions={questions} />} />
+          <Route
+            path="/quiz"
+            element={
+              <QuizScreen
+                questions={questions}
+                userAnswers={userAnswers}
+                setUserAnswers={setUserAnswers}
+              />
+            }
+          />
           <Route path="/summary" element={<SummaryScreen />} />
         </Routes>
       </Router>
