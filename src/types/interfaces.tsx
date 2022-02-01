@@ -20,3 +20,11 @@ export interface QuestionScreenInterface {
   userAnswers: UserAsnwersType;
   setUserAnswers: React.Dispatch<React.SetStateAction<UserAsnwersType>>;
 }
+
+export interface SummaryScreenInterface {
+  userAnswers: UserAsnwersType;
+  questions: QuestionInterface[];
+  correctAnswers: UserAsnwersType;
+  punctation: number;
+  setPunctation: React.Dispatch<React.SetStateAction<number>>;
+}

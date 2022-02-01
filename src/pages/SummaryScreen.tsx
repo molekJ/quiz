@@ -1,43 +1,38 @@
-import React, { useState } from "react";
-import { UserAsnwersType, QuestionInterface } from "../types/interfaces";
+import React, { useEffect, useState } from "react";
+import {
+  UserAsnwersType,
+  QuestionInterface,
+  SummaryScreenInterface,
+} from "../types/interfaces";
 import { Button } from "react-bootstrap";
-
-interface SummaryScreenInterface {
-  userAnswers: UserAsnwersType;
-  questions: QuestionInterface[];
-}
+import { get } from "https";
 
 export const SummaryScreen = ({
   userAnswers,
   questions,
+  correctAnswers,
+  punctation,
+  setPunctation,
 }: SummaryScreenInterface) => {
-  const [correctAnswers, setCorrectAnswers] = useState<UserAsnwersType>();
-
-  const checkAnswers = () => {
-    questions.forEach((question, indexQuestion) => {
-      question.answers.forEach((answer, indexAnswer) => {
-        if (answer.is_correct === true) {
-          setCorrectAnswers((old) => {
-            return { ...old, [indexQuestion]: indexAnswer };
-          });
-        }
-      });
-    });
+  const showAnswers = () => {
+    for (const key in userAnswers) {
+      if (userAnswers[key] === correctAnswers[key]) {
+        setPunctation((old) => (old += 1));
+      }
+      console.log(punctation);
+    }
   };
 
-  console.log(userAnswers);
-  console.log(questions);
+  useEffect(() => {
+    showAnswers();
+  }, []);
 
   return (
     <>
       <div>Podsumowanie</div>
-      <Button
-        onClick={() => {
-          checkAnswers();
-        }}
-      >
-        Sprawdz
-      </Button>
+      <Button>Dobre odpowiedzi</Button>
+      <Button>Porownaj</Button>
+      <p>{punctation}</p>
     </>
   );
 };

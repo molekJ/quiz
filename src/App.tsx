@@ -11,6 +11,12 @@ import { useEffect, useState } from "react";
 import { QuestionInterface, UserAsnwersType } from "./types/interfaces";
 
 function App() {
+  const [questions, setQuestions] = useState<QuestionInterface[]>([]);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [userAnswers, setUserAnswers] = useState<UserAsnwersType>({});
+  const [correctAnswers, setCorrectAnswers] = useState<UserAsnwersType>({});
+  const [punctation, setPunctation] = useState(0);
+
   useEffect(() => {
     const questionsPromise = GetQuestions();
     questionsPromise.then((res) => {
@@ -19,9 +25,17 @@ function App() {
     });
   }, []);
 
-  const [questions, setQuestions] = useState<QuestionInterface[]>([]);
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const [userAnswers, setUserAnswers] = useState<UserAsnwersType>({});
+  useEffect(() => {
+    questions.forEach((question, indexQuestion) => {
+      question.answers.forEach((answer, indexAnswer) => {
+        if (answer.is_correct === true) {
+          setCorrectAnswers((old) => {
+            return { ...old, [indexQuestion]: indexAnswer };
+          });
+        }
+      });
+    });
+  }, [questions]);
 
   return (
     <Container>
@@ -42,7 +56,13 @@ function App() {
           <Route
             path="/summary"
             element={
-              <SummaryScreen userAnswers={userAnswers} questions={questions} />
+              <SummaryScreen
+                userAnswers={userAnswers}
+                questions={questions}
+                correctAnswers={correctAnswers}
+                punctation={punctation}
+                setPunctation={setPunctation}
+              />
             }
           />
         </Routes>
