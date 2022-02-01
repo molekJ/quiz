@@ -36,5 +36,10 @@ export interface PreviewScreenInterface {
 
 export interface AnswerCardInterface {
   question: QuestionInterface;
-  userAnswers: UserAsnwersType;
+  userAnswer: number | undefined;
+}
+
+export interface NavbarInterface {
+  clearAllStates: () => void;
+  timer: number;
 }

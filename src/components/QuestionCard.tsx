@@ -14,10 +14,9 @@ export const QuestionCard = ({
 
   return (
     <>
-      <Card className="splash-screen ">
+      <Card className="splash-screen " mb-3>
         <Card.Body>
           <Form.Group>
-            <pre>{questionId}</pre>
             <Form.Label>{question.question}</Form.Label>
             {question.answers.map((el, index) => {
               return (
