@@ -9,6 +9,7 @@ import { GetQuestions } from "./service/GetQuestions";
 import { useEffect, useState } from "react";
 
 import { QuestionInterface, UserAsnwersType } from "./types/interfaces";
+import { PreviewScreen } from "./pages/PreviewScreen";
 
 function App() {
   const [questions, setQuestions] = useState<QuestionInterface[]>([]);
@@ -69,6 +70,7 @@ function App() {
               />
             }
           />
+          <Route path="/preview" element={<PreviewScreen />} />
         </Routes>
       </Router>
     </Container>

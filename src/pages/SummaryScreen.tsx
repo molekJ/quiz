@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { SummaryScreenInterface } from "../types/interfaces";
 import { Button } from "react-bootstrap";
 import { get } from "https";
+import { Link } from "react-router-dom";
 
 export const SummaryScreen = ({
   userAnswers,
@@ -40,6 +41,9 @@ export const SummaryScreen = ({
         Twój wynik jest w przedziale:{" "}
         {checkScoringRange(punctation, Object.keys(correctAnswers).length)} %
       </p>
+      <Link to="/preview">
+        <Button>Sprawdz odpowiedzi</Button>
+      </Link>
     </>
   );
 };
