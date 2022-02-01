@@ -101,5 +101,105 @@
           "is_correct": false
         }
       ]
+    }, {
+      "question": "Wzór na pole trójkąta:",
+      "answers": [
+        {
+          "answer": "1/2 * a * h",
+          "is_correct": true
+        },
+        {
+          "answer": "a * h",
+          "is_correct": false
+        },
+        {
+          "answer": "2 * a * h",
+          "is_correct": false
+        },
+        {
+          "answer": "a * b",
+          "is_correct": false
+        }
+      ]
+    }, {
+      "question": "8 x8 ",
+      "answers": [
+        {
+          "answer": "60",
+          "is_correct": false
+        },
+        {
+          "answer": "62",
+          "is_correct": false
+        },
+        {
+          "answer": "64",
+          "is_correct": true
+        },
+        {
+          "answer": "66",
+          "is_correct": false
+        }
+      ]
+    }, {
+      "question": "Liczba 10 w systemie binarnym to:",
+      "answers": [
+        {
+          "answer": "1000",
+          "is_correct": false
+        },
+        {
+          "answer": "1100",
+          "is_correct": false
+        },
+        {
+          "answer": "1010",
+          "is_correct": true
+        },
+        {
+          "answer": "1001",
+          "is_correct": false
+        }
+      ]
+    }, {
+      "question": "Najdłuższa rzeka Polski:",
+      "answers": [
+        {
+          "answer": "Bug",
+          "is_correct": false
+        },
+        {
+          "answer": "Odra",
+          "is_correct": false
+        },
+        {
+          "answer": "Warta",
+          "is_correct": false
+        },
+        {
+          "answer": "Wisła",
+          "is_correct": true
+        }
+      ]
+    }, {
+      "question": "Do Korony Gór Polski NIE należy:",
+      "answers": [
+        {
+          "answer": "Śnieżka",
+          "is_correct": false
+        },
+        {
+          "answer": "Kozi Wierch",
+          "is_correct": true
+        },
+        {
+          "answer": "Rysy",
+          "is_correct": false
+        },
+        {
+          "answer": "Tarnica",
+          "is_correct": false
+        }
+      ]
     }
   ]

@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {
-  UserAsnwersType,
-  QuestionInterface,
-  SummaryScreenInterface,
-} from "../types/interfaces";
+import React, { useEffect } from "react";
+import { SummaryScreenInterface } from "../types/interfaces";
 import { Button } from "react-bootstrap";
 import { get } from "https";
 
@@ -19,7 +15,6 @@ export const SummaryScreen = ({
       if (userAnswers[key] === correctAnswers[key]) {
         setPunctation((old) => (old += 1));
       }
-      console.log(punctation);
     }
   };
 
@@ -27,12 +22,24 @@ export const SummaryScreen = ({
     showAnswers();
   }, []);
 
+  const checkScoringRange = (score: number, numOfQuestion: number) => {
+    const percentageRange = (score / numOfQuestion) * 100;
+    if (percentageRange <= 50) {
+      return "0 - 50";
+    } else if (percentageRange > 50 && percentageRange <= 80) {
+      return "51- 80";
+    } else {
+      return "51- 80";
+    }
+  };
+
   return (
     <>
-      <div>Podsumowanie</div>
-      <Button>Dobre odpowiedzi</Button>
-      <Button>Porownaj</Button>
-      <p>{punctation}</p>
+      <h1>Podsumowanie</h1>
+      <p>
+        Twój wynik jest w przedziale:{" "}
+        {checkScoringRange(punctation, Object.keys(correctAnswers).length)} %
+      </p>
     </>
   );
 };

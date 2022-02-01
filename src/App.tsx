@@ -37,6 +37,10 @@ function App() {
     });
   }, [questions]);
 
+  useEffect(() => {
+    console.log(correctAnswers);
+  }, [correctAnswers]);
+
   return (
     <Container>
       <Router>
