@@ -28,3 +28,13 @@ export interface SummaryScreenInterface {
   punctation: number;
   setPunctation: React.Dispatch<React.SetStateAction<number>>;
 }
+
+export interface PreviewScreenInterface {
+  questions: QuestionInterface[];
+  userAnswers: UserAsnwersType;
+}
+
+export interface AnswerCardInterface {
+  question: QuestionInterface;
+  userAnswers: UserAsnwersType;
+}

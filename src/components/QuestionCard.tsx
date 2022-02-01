@@ -22,6 +22,7 @@ export const QuestionCard = ({
             {question.answers.map((el, index) => {
               return (
                 <Form.Check
+                  key={index}
                   name={question.question}
                   label={el.answer}
                   type="radio"

@@ -24,11 +24,13 @@ export const QuizScreen = ({
     <Card className="quiz-screen ">
       {questions.map((question, index) => {
         return (
-          <Container className={index === current ? "slide active" : "slide"}>
+          <Container
+            key={index}
+            className={index === current ? "slide active" : "slide"}
+          >
             <QuestionCard
               question={question}
               setUserAnswers={setUserAnswers}
-              key={index}
               questionId={index}
             ></QuestionCard>
           </Container>

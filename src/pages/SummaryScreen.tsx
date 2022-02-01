@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { SummaryScreenInterface } from "../types/interfaces";
 import { Button } from "react-bootstrap";
-import { get } from "https";
+
 import { Link } from "react-router-dom";
 
 export const SummaryScreen = ({
@@ -18,6 +18,8 @@ export const SummaryScreen = ({
       }
     }
   };
+
+  const wrongAnswers = Object.keys(correctAnswers).length;
 
   useEffect(() => {
     showAnswers();
@@ -37,9 +39,13 @@ export const SummaryScreen = ({
   return (
     <>
       <h1>Podsumowanie</h1>
+      <p>Liczba dobrych odpowiedzi: {punctation}</p>
+      <p>Liczba niepoprawnych odpowiedzi:{wrongAnswers - punctation}</p>
       <p>
         Twój wynik jest w przedziale:{" "}
-        {checkScoringRange(punctation, Object.keys(correctAnswers).length)} %
+        <span>
+          {checkScoringRange(punctation, Object.keys(correctAnswers).length)} %
+        </span>
       </p>
       <Link to="/preview">
         <Button>Sprawdz odpowiedzi</Button>

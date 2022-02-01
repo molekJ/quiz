@@ -38,10 +38,6 @@ function App() {
     });
   }, [questions]);
 
-  useEffect(() => {
-    console.log(correctAnswers);
-  }, [correctAnswers]);
-
   return (
     <Container>
       <Router>
@@ -70,7 +66,12 @@ function App() {
               />
             }
           />
-          <Route path="/preview" element={<PreviewScreen />} />
+          <Route
+            path="/preview"
+            element={
+              <PreviewScreen questions={questions} userAnswers={userAnswers} />
+            }
+          />
         </Routes>
       </Router>
     </Container>
