@@ -7,7 +7,6 @@ import { SummaryScreen } from "./pages/SummaryScreen";
 import { Container } from "react-bootstrap";
 import { GetQuestions } from "./service/GetQuestions";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { QuestionInterface, UserAsnwersType } from "./types/interfaces";
 import { PreviewScreen } from "./pages/PreviewScreen";
 
@@ -17,20 +16,7 @@ function App() {
   const [userAnswers, setUserAnswers] = useState<UserAsnwersType>({});
   const [correctAnswers, setCorrectAnswers] = useState<UserAsnwersType>({});
   const [punctation, setPunctation] = useState(0);
-
   const [timer, setTimer] = useState(0);
-  const [isActiveTimer, setIsActiveTimer] = useState(true);
-
-  useEffect(() => {
-    let myInterval = setInterval(() => {
-      if (!isActiveTimer) return;
-      setTimer((timer) => timer + 1);
-    }, 1000);
-    if (timer === 20) {
-    }
-
-    return () => clearInterval(myInterval);
-  }, [timer, isActiveTimer]);
 
   const ClearAllStates = () => {
     setQuestions([]);
@@ -40,6 +26,13 @@ function App() {
     setPunctation(0);
     setTimer(0);
   };
+
+  useEffect(() => {
+    let myInterval = setInterval(() => {
+      setTimer((timer) => timer + 1);
+    }, 1000);
+    return () => clearInterval(myInterval);
+  }, [timer]);
 
   useEffect(() => {
     const questionsPromise = GetQuestions();

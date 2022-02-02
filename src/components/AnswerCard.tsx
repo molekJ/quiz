@@ -1,4 +1,4 @@
-import { Card, Form, Container, FormCheck } from "react-bootstrap";
+import { Card, Form, FormCheck } from "react-bootstrap";
 import { AnswerCardInterface } from "../types/interfaces";
 
 export const AnswerCard = ({ question, userAnswer }: AnswerCardInterface) => {
@@ -8,7 +8,6 @@ export const AnswerCard = ({ question, userAnswer }: AnswerCardInterface) => {
         <Card.Body>
           <Form.Label>{question.question}</Form.Label>
           {question.answers.map((el, index) => {
-            console.log(index);
             return (
               <>
                 {el.is_correct ? (

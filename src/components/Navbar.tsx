@@ -9,7 +9,7 @@ export default function Navbar({ clearAllStates, timer }: NavbarInterface) {
   let nav = useNavigate();
 
   useEffect(() => {
-    if (timer === 10) {
+    if (timer === 300) {
       clearAllStates();
       nav("/");
     }
