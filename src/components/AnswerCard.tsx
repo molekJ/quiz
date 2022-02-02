@@ -16,14 +16,14 @@ export const AnswerCard = ({ question, userAnswer }: AnswerCardInterface) => {
                     key={index}
                     type="radio"
                     className="text-success"
-                    checked={userAnswer === index ? true : false}
+                    defaultChecked={userAnswer === index ? true : false}
                   />
                 ) : (
                   <FormCheck
                     label={el.answer}
                     key={index}
                     type="radio"
-                    checked={userAnswer === index ? true : false}
+                    defaultChecked={userAnswer === index ? true : false}
                     className={
                       userAnswer === index ? "text-danger" : "text-dark"
                     }

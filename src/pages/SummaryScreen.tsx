@@ -3,6 +3,7 @@ import { SummaryScreenInterface } from "../types/interfaces";
 import { Button } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const SummaryScreen = ({
   userAnswers,
@@ -18,6 +19,8 @@ export const SummaryScreen = ({
       }
     }
   };
+
+  const { t } = useTranslation();
 
   const wrongAnswers = Object.keys(correctAnswers).length;
 
@@ -38,17 +41,21 @@ export const SummaryScreen = ({
 
   return (
     <>
-      <h1>Podsumowanie</h1>
-      <p>Liczba dobrych odpowiedzi: {punctation}</p>
-      <p>Liczba niepoprawnych odpowiedzi:{wrongAnswers - punctation}</p>
+      <h1>{t("summary_message")}</h1>
       <p>
-        Twój wynik jest w przedziale:{" "}
+        {t("amount_of_correct_answers")}: {punctation}
+      </p>
+      <p>
+        {t("amount_of_wrong_answers")}:{wrongAnswers - punctation}
+      </p>
+      <p>
+        {t("percentage_scale")}:{" "}
         <span>
           {checkScoringRange(punctation, Object.keys(correctAnswers).length)} %
         </span>
       </p>
       <Link to="/preview">
-        <Button>Sprawdz odpowiedzi</Button>
+        <Button>{t("check_answers_button")}</Button>
       </Link>
     </>
   );

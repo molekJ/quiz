@@ -3,7 +3,7 @@ import { Button, Card, Col, Container } from "react-bootstrap";
 import { QuestionCard } from "../components/QuestionCard";
 import { QuestionScreenInterface } from "../types/interfaces";
 import { Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 export const QuizScreen = ({
   questions,
   userAnswers,
@@ -20,6 +20,8 @@ export const QuizScreen = ({
     setCurrent(current - 1);
   };
 
+  const { t } = useTranslation();
+
   return (
     <Card className="quiz-screen ">
       {questions.map((question, index) => {
@@ -32,6 +34,7 @@ export const QuizScreen = ({
               question={question}
               setUserAnswers={setUserAnswers}
               questionId={index}
+              mb-3
             ></QuestionCard>
           </Container>
         );
@@ -44,7 +47,7 @@ export const QuizScreen = ({
           }}
           disabled={current === 0 ? true : false}
         >
-          Prev
+          {t("prev_button")}
         </Button>
         <Link
           to="/summary"
@@ -63,7 +66,7 @@ export const QuizScreen = ({
                 : true
             }
           >
-            Zakoncz
+            {t("end_button")}
           </Button>
         </Link>
         <Button
@@ -72,7 +75,7 @@ export const QuizScreen = ({
           }}
           disabled={current === length - 1 ? true : false}
         >
-          Next
+          {t("next_button")}
         </Button>
       </Col>
     </Card>

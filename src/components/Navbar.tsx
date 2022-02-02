@@ -1,4 +1,11 @@
-import { Container, DropdownButton, Dropdown, Button } from "react-bootstrap";
+import {
+  Container,
+  DropdownButton,
+  Dropdown,
+  Button,
+  Row,
+  Col,
+} from "react-bootstrap";
 import { AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { NavbarInterface } from "../types/interfaces";
@@ -36,44 +43,49 @@ export default function Navbar({ clearAllStates, timer }: NavbarInterface) {
 
   return (
     <Container>
-      <h1>Quizzy</h1>
-      <Link
-        to="/"
-        onClick={() => {
-          clearAllStates();
-        }}
-      >
-        <AiFillHome size={30} />
-      </Link>
-      <p>{timer}</p>
-      <p>Język {t("welcome_message")}</p>
+      <Row>
+        <Col>
+          <Link
+            to="/"
+            onClick={() => {
+              clearAllStates();
+            }}
+          >
+            <AiFillHome size={30} />
+          </Link>
+        </Col>
+        <Col>
+          <h1>{t("app_title")}</h1>
+        </Col>
+        <Col md="auto">
+          <Dropdown>
+            <Dropdown.Toggle variant="primary" id="dropdown-basic">
+              <BsGlobe />
+            </Dropdown.Toggle>
 
-      <Dropdown>
-        <Dropdown.Toggle variant="primary" id="dropdown-basic">
-          <BsGlobe />
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <li>
-            <span className="dropdown-item-text">{t("language")}</span>
-          </li>
-          {languages.map(({ code, name, country_code }) => {
-            return (
-              <Button
-                className="dropdown-item"
-                key={country_code}
-                onClick={() => {
-                  i18next.changeLanguage(code);
-                }}
-                disabled={code === currentLanguageCode}
-              >
-                <ReactCountryFlag countryCode={country_code} />
-                {name}
-              </Button>
-            );
-          })}
-        </Dropdown.Menu>
-      </Dropdown>
+            <Dropdown.Menu>
+              <li>
+                <span className="dropdown-item-text">{t("language")}</span>
+              </li>
+              {languages.map(({ code, name, country_code }) => {
+                return (
+                  <Button
+                    className="dropdown-item"
+                    key={country_code}
+                    onClick={() => {
+                      i18next.changeLanguage(code);
+                    }}
+                    disabled={code === currentLanguageCode}
+                  >
+                    <ReactCountryFlag countryCode={country_code} />
+                    {name}
+                  </Button>
+                );
+              })}
+            </Dropdown.Menu>
+          </Dropdown>
+        </Col>
+      </Row>
     </Container>
   );
 }
