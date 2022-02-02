@@ -1,5 +1,6 @@
 import { Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+//przneisc do index.tsx
 import { Link } from "react-router-dom";
 interface IsLoaded {
   isLoaded: boolean;
