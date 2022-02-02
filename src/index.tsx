@@ -20,7 +20,9 @@ i18n
       order: ["cookie", "htmlTag", "localStorage", "path", "subdomain"],
       caches: ["cookie"],
     },
-    backend: { loadPath: "/quiz/assets/locales/{{lng}}/translation.json" },
+    backend: {
+      loadPath: "/quiz/public/assets/locales/{{lng}}/translation.json",
+    },
     react: { useSuspense: false },
   });
 
