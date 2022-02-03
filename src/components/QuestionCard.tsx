@@ -14,27 +14,25 @@ export const QuestionCard = ({
 
   return (
     <>
-      <Card className="splash-screen ">
-        <Card.Body>
-          <Form.Group>
-            <Form.Label>{question.question}</Form.Label>
-            {question.answers.map((el, index) => {
-              return (
-                <Form.Check
-                  key={index}
-                  name={question.question}
-                  label={el.answer}
-                  type="radio"
-                  value={index}
-                  onClick={() => {
-                    onChange(questionId, index);
-                  }}
-                />
-              );
-            })}
-          </Form.Group>
-        </Card.Body>
-      </Card>
+      <Card.Body className="height-card">
+        <Form.Group>
+          <Form.Label>{question.question}</Form.Label>
+          {question.answers.map((el, index) => {
+            return (
+              <Form.Check
+                key={index}
+                name={question.question}
+                label={el.answer}
+                type="radio"
+                value={index}
+                onClick={() => {
+                  onChange(questionId, index);
+                }}
+              />
+            );
+          })}
+        </Form.Group>
+      </Card.Body>
     </>
   );
 };

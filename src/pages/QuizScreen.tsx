@@ -40,8 +40,9 @@ export const QuizScreen = ({
         );
       })}
 
-      <Col>
+      <Col className="d-flex justify-content-center">
         <Button
+          className="m-1"
           onClick={() => {
             prevSlide();
           }}
@@ -59,7 +60,12 @@ export const QuizScreen = ({
           }}
         >
           <Button
-            variant="danger"
+            className="m-1"
+            variant={
+              questions.length === Object.keys(userAnswers).length
+                ? "success"
+                : "danger"
+            }
             disabled={
               questions.length === Object.keys(userAnswers).length
                 ? false
@@ -70,6 +76,7 @@ export const QuizScreen = ({
           </Button>
         </Link>
         <Button
+          className="m-1 "
           onClick={() => {
             nextSlide();
           }}

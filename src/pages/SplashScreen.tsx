@@ -14,11 +14,16 @@ export const SplashScreen = ({ isLoaded }: IsLoaded) => {
   return (
     <>
       {isLoaded ? (
-        <Card className="splash-screen ">
-          <Card.Body>
-            <Card.Title>{t("splash_welcome")}</Card.Title>
-            <Card.Text>{t("splash_before_test")}</Card.Text>
-            <Link to="/quiz">
+        <Card className="min-vh-50: (values (50: 50vh))">
+          <Card.Body className="d-flex-row">
+            <Card.Title className="text-center">
+              {t("splash_welcome")}
+            </Card.Title>
+            <Card.Text className="text-center">
+              {t("splash_before_test")}
+            </Card.Text>
+
+            <Link to="/quiz" className="d-flex justify-content-center">
               <Button variant="primary" size="lg">
                 {t("start_test_button")}{" "}
               </Button>
@@ -26,7 +31,13 @@ export const SplashScreen = ({ isLoaded }: IsLoaded) => {
           </Card.Body>
         </Card>
       ) : (
-        <p>Ładujemy pytania</p>
+        <Card>
+          <Card.Body>
+            <Card.Title className="text-center">
+              {t("loading_questions")}
+            </Card.Title>
+          </Card.Body>
+        </Card>
       )}
     </>
   );

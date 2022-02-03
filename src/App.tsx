@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import { QuizScreen } from "./pages/QuizScreen";
 import { SplashScreen } from "./pages/SplashScreen";
 import { SummaryScreen } from "./pages/SummaryScreen";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { GetQuestions } from "./service/GetQuestions";
 import { useEffect, useState } from "react";
 import { QuestionInterface, UserAsnwersType } from "./types/interfaces";
@@ -60,40 +60,47 @@ function App() {
         setTimer(0);
       }}
     >
-      <Router>
-        <Navbar clearAllStates={ClearAllStates} timer={timer} />
-        <Routes>
-          <Route path="/" element={<SplashScreen isLoaded={isLoaded} />} />
-          <Route
-            path="/quiz"
-            element={
-              <QuizScreen
-                questions={questions}
-                userAnswers={userAnswers}
-                setUserAnswers={setUserAnswers}
+      <Row>
+        <Col>
+          <Router>
+            <Navbar clearAllStates={ClearAllStates} timer={timer} />
+            <Routes>
+              <Route path="/" element={<SplashScreen isLoaded={isLoaded} />} />
+              <Route
+                path="/quiz"
+                element={
+                  <QuizScreen
+                    questions={questions}
+                    userAnswers={userAnswers}
+                    setUserAnswers={setUserAnswers}
+                  />
+                }
               />
-            }
-          />
-          <Route
-            path="/summary"
-            element={
-              <SummaryScreen
-                userAnswers={userAnswers}
-                questions={questions}
-                correctAnswers={correctAnswers}
-                punctation={punctation}
-                setPunctation={setPunctation}
+              <Route
+                path="/summary"
+                element={
+                  <SummaryScreen
+                    userAnswers={userAnswers}
+                    questions={questions}
+                    correctAnswers={correctAnswers}
+                    punctation={punctation}
+                    setPunctation={setPunctation}
+                  />
+                }
               />
-            }
-          />
-          <Route
-            path="/preview"
-            element={
-              <PreviewScreen questions={questions} userAnswers={userAnswers} />
-            }
-          />
-        </Routes>
-      </Router>
+              <Route
+                path="/preview"
+                element={
+                  <PreviewScreen
+                    questions={questions}
+                    userAnswers={userAnswers}
+                  />
+                }
+              />
+            </Routes>
+          </Router>
+        </Col>
+      </Row>
     </Container>
   );
 }

@@ -13,4 +13,10 @@
   pointer-events: none;
 }
 
+.height-card {
+  @media screen and (max-width: 576px) {
+    min-height: 80vh;
+  }
+}
+
 // jedna klasa, dziedziczenie

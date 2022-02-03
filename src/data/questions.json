@@ -145,7 +145,7 @@
       "question": "W zakładce 'Network' w Chrome DevTools NIE można:",
       "answers": [
         {
-          "answer": "Spowolnić swojego połączenie internetowe",
+          "answer": "Spowolnić swojego połączenia internetowego",
           "is_correct": false
         },
         {
@@ -153,7 +153,7 @@
           "is_correct": true
         },
         {
-          "answer": "Zablokować pobieranie wybranych plików",
+          "answer": "Zablokować pobierania wybranych plików",
           "is_correct": false
         },
         {
@@ -182,7 +182,7 @@
         }
       ]
     }, {
-      "question": "Jakiej komendy należy użyć by wyśwotlić historię commitów?",
+      "question": "Jakiej komendy należy użyć by wyświetlić historię commitów?",
       "answers": [
         {
           "answer": "git init",

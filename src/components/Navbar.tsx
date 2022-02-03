@@ -44,7 +44,7 @@ export default function Navbar({ clearAllStates, timer }: NavbarInterface) {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col xs={2} className="d-flex align-items-center">
           <Link
             to="/"
             onClick={() => {
@@ -54,10 +54,13 @@ export default function Navbar({ clearAllStates, timer }: NavbarInterface) {
             <AiFillHome size={30} />
           </Link>
         </Col>
-        <Col>
-          <h1>{t("app_title")}</h1>
+        <Col xs={8}>
+          <h1 className="text-center">{t("app_title")}</h1>
         </Col>
-        <Col md="auto">
+        <Col
+          xs={2}
+          className="text-end  d-flex justify-content-end align-items-center"
+        >
           <Dropdown>
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
               <BsGlobe />
