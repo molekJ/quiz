@@ -16,16 +16,14 @@ export const SplashScreen = ({ isLoaded }: IsLoaded) => {
       {isLoaded ? (
         <Card className="min-vh-50: (values (50: 50vh))">
           <Card.Body className="d-flex-row">
-            <Card.Title className="text-center">
-              {t("splash_welcome")}
-            </Card.Title>
+            <Card.Title className="text-center">Welcome to the test</Card.Title>
             <Card.Text className="text-center">
-              {t("splash_before_test")}
+              There are many difficult questions ahead of you
             </Card.Text>
 
             <Link to="/quiz" className="d-flex justify-content-center">
               <Button variant="primary" size="lg">
-                {t("start_test_button")}{" "}
+                Start
               </Button>
             </Link>
           </Card.Body>
@@ -34,7 +32,7 @@ export const SplashScreen = ({ isLoaded }: IsLoaded) => {
         <Card>
           <Card.Body>
             <Card.Title className="text-center">
-              {t("loading_questions")}
+              Loading questions...
             </Card.Title>
           </Card.Body>
         </Card>

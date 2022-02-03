@@ -42,22 +42,22 @@ export const SummaryScreen = ({
   return (
     <Card>
       <Card.Body className="d-flex-row">
-        <Card.Title className="text-center">{t("summary_message")}</Card.Title>
+        <Card.Title className="text-center">Summary</Card.Title>
         <Card.Text className="text-center">
-          {t("amount_of_correct_answers")}: {punctation}
+          Correct answers: {punctation}
         </Card.Text>
         <Card.Text className="text-center">
-          {t("amount_of_wrong_answers")}:{wrongAnswers - punctation}
+          Wrong answers:{wrongAnswers - punctation}
         </Card.Text>
         <Card.Text className="text-center">
-          {t("percentage_scale")}:{" "}
+          Percentage scale:{" "}
           <span>
             {checkScoringRange(punctation, Object.keys(correctAnswers).length)}{" "}
             %
           </span>
         </Card.Text>
         <Link to="/preview" className="d-flex justify-content-center">
-          <Button>{t("check_answers_button")}</Button>
+          <Button>Check answers</Button>
         </Link>
       </Card.Body>
     </Card>
