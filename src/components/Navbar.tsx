@@ -31,9 +31,9 @@ export default function Navbar({ clearAllStates, timer }: NavbarInterface) {
   let nav = useNavigate();
 
   useEffect(() => {
-    if (timer === 30) {
+    if (timer === 300) {
       clearAllStates();
-      nav("/");
+      nav("/quiz");
     }
   }, [timer]);
 
@@ -46,7 +46,7 @@ export default function Navbar({ clearAllStates, timer }: NavbarInterface) {
       <Row>
         <Col xs={2} className="d-flex align-items-center">
           <Link
-            to="/"
+            to="/quiz"
             onClick={() => {
               clearAllStates();
             }}

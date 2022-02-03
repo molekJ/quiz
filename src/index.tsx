@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import { HashRouter as Router } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import "./assets/scss/main.scss";
 import "./index.css";

@@ -20,12 +20,13 @@ export const SplashScreen = ({ isLoaded }: IsLoaded) => {
             <Card.Text className="text-center">
               There are many difficult questions ahead of you
             </Card.Text>
-
-            <Link to="/quiz" className="d-flex justify-content-center">
-              <Button variant="primary" size="lg">
-                Start
-              </Button>
-            </Link>
+            <div className="d-flex justify-content-center ">
+              <Link to="/questions">
+                <Button variant="primary" size="lg">
+                  Start
+                </Button>
+              </Link>
+            </div>
           </Card.Body>
         </Card>
       ) : (

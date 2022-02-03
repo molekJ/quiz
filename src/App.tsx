@@ -60,47 +60,40 @@ function App() {
         setTimer(0);
       }}
     >
-      <Row>
-        <Col>
-          <Router>
-            <Navbar clearAllStates={ClearAllStates} timer={timer} />
-            <Routes>
-              <Route path="/" element={<SplashScreen isLoaded={isLoaded} />} />
-              <Route
-                path="/quiz"
-                element={
-                  <QuizScreen
-                    questions={questions}
-                    userAnswers={userAnswers}
-                    setUserAnswers={setUserAnswers}
-                  />
-                }
+      <Router>
+        <Navbar clearAllStates={ClearAllStates} timer={timer} />
+        <Routes>
+          <Route path="/quiz" element={<SplashScreen isLoaded={isLoaded} />} />
+          <Route
+            path="/questions"
+            element={
+              <QuizScreen
+                questions={questions}
+                userAnswers={userAnswers}
+                setUserAnswers={setUserAnswers}
               />
-              <Route
-                path="/summary"
-                element={
-                  <SummaryScreen
-                    userAnswers={userAnswers}
-                    questions={questions}
-                    correctAnswers={correctAnswers}
-                    punctation={punctation}
-                    setPunctation={setPunctation}
-                  />
-                }
+            }
+          />
+          <Route
+            path="/summary"
+            element={
+              <SummaryScreen
+                userAnswers={userAnswers}
+                questions={questions}
+                correctAnswers={correctAnswers}
+                punctation={punctation}
+                setPunctation={setPunctation}
               />
-              <Route
-                path="/preview"
-                element={
-                  <PreviewScreen
-                    questions={questions}
-                    userAnswers={userAnswers}
-                  />
-                }
-              />
-            </Routes>
-          </Router>
-        </Col>
-      </Row>
+            }
+          />
+          <Route
+            path="/preview"
+            element={
+              <PreviewScreen questions={questions} userAnswers={userAnswers} />
+            }
+          />
+        </Routes>
+      </Router>
     </Container>
   );
 }
