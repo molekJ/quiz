@@ -43,3 +43,7 @@ export interface NavbarInterface {
   clearAllStates: () => void;
   timer: number;
 }
+
+export interface IsLoaded {
+  isLoaded: boolean;
+}

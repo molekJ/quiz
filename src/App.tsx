@@ -63,9 +63,9 @@ function App() {
       <Router>
         <Navbar clearAllStates={ClearAllStates} timer={timer} />
         <Routes>
-          <Route path="/quiz" element={<SplashScreen isLoaded={isLoaded} />} />
+          <Route path="/" element={<SplashScreen isLoaded={isLoaded} />} />
           <Route
-            path="/questions"
+            path="/quiz"
             element={
               <QuizScreen
                 questions={questions}

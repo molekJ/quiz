@@ -1,12 +1,8 @@
 import { Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-//przneisc do index.tsx
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
-interface IsLoaded {
-  isLoaded: boolean;
-}
+import { IsLoaded } from "../types/interfaces";
 
 export const SplashScreen = ({ isLoaded }: IsLoaded) => {
   const { t } = useTranslation();
@@ -16,14 +12,16 @@ export const SplashScreen = ({ isLoaded }: IsLoaded) => {
       {isLoaded ? (
         <Card className="min-vh-50: (values (50: 50vh))">
           <Card.Body className="d-flex-row">
-            <Card.Title className="text-center">Welcome to the test</Card.Title>
+            <Card.Title className="text-center">
+              {t("splash_welcome")}
+            </Card.Title>
             <Card.Text className="text-center">
-              There are many difficult questions ahead of you
+              {t("splash_before_test")}
             </Card.Text>
             <div className="d-flex justify-content-center ">
-              <Link to="/questions">
+              <Link to="/quiz">
                 <Button variant="primary" size="lg">
-                  Start
+                  {t("start_test_button")}
                 </Button>
               </Link>
             </div>
@@ -33,7 +31,7 @@ export const SplashScreen = ({ isLoaded }: IsLoaded) => {
         <Card>
           <Card.Body>
             <Card.Title className="text-center">
-              Loading questions...
+              {t("loading_questions")}
             </Card.Title>
           </Card.Body>
         </Card>

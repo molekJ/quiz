@@ -1,11 +1,4 @@
-import {
-  Container,
-  DropdownButton,
-  Dropdown,
-  Button,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { Container, Dropdown, Button, Row, Col } from "react-bootstrap";
 import { AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { NavbarInterface } from "../types/interfaces";
@@ -33,20 +26,20 @@ export default function Navbar({ clearAllStates, timer }: NavbarInterface) {
   useEffect(() => {
     if (timer === 300) {
       clearAllStates();
-      nav("/quiz");
+      nav("/");
     }
   }, [timer]);
 
-  // useEffect(() => {
-  //   document.title = t("app_title");
-  // }, [currentLanguage, t]);
+  useEffect(() => {
+    document.title = t("app_title");
+  }, [currentLanguage, t]);
 
   return (
     <Container>
       <Row>
         <Col xs={2} className="d-flex align-items-center">
           <Link
-            to="/quiz"
+            to="/"
             onClick={() => {
               clearAllStates();
             }}
@@ -55,7 +48,7 @@ export default function Navbar({ clearAllStates, timer }: NavbarInterface) {
           </Link>
         </Col>
         <Col xs={8}>
-          <h1 className="text-center">Quiz</h1>
+          <h1 className="text-center">{t("app_title")}</h1>
         </Col>
         <Col
           xs={2}
@@ -68,7 +61,7 @@ export default function Navbar({ clearAllStates, timer }: NavbarInterface) {
 
             <Dropdown.Menu>
               <li>
-                <span className="dropdown-item-text">Language</span>
+                <span className="dropdown-item-text">{t("language")}</span>
               </li>
               {languages.map(({ code, name, country_code }) => {
                 return (

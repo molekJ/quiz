@@ -48,7 +48,7 @@ export const QuizScreen = ({
           }}
           disabled={current === 0 ? true : false}
         >
-          Prev
+          {t("prev_button")}
         </Button>
         <Link
           to="/summary"
@@ -72,7 +72,7 @@ export const QuizScreen = ({
                 : true
             }
           >
-            Finish
+            {t("end_button")}
           </Button>
         </Link>
         <Button
@@ -82,7 +82,7 @@ export const QuizScreen = ({
           }}
           disabled={current === length - 1 ? true : false}
         >
-          Next
+          {t("next_button")}
         </Button>
       </Col>
     </Card>
