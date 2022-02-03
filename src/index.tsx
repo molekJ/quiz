@@ -20,9 +20,7 @@ i18n
       order: ["cookie", "htmlTag", "localStorage", "path", "subdomain"],
       caches: ["cookie"],
     },
-    backend: {
-      loadPath: "/quiz/public/assets/locales/{{lng}}/translation.json",
-    },
+    backend: { loadPath: "/assets/locales/{{lng}}/translation.json" },
     react: { useSuspense: false },
   });
 
@@ -37,3 +35,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// "homepage": "https://molekj.github.io/quiz/",

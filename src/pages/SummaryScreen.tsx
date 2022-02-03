@@ -35,7 +35,7 @@ export const SummaryScreen = ({
     } else if (percentageRange > 50 && percentageRange <= 80) {
       return "51- 80";
     } else {
-      return "51- 80";
+      return "81- 100";
     }
   };
 

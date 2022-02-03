@@ -1,203 +1,203 @@
 [
     {
-      "question": "Jaki kolor ma słońce",
+      "question": "Który atrybut w <input type='radio'/> określa grupę, w obrębie której można wybrać tylko jedną opcję?",
       "answers": [
         {
-          "answer": "zielony",
-          "is_correct": false
-        },
-        {
-          "answer": "czerwony",
-          "is_correct": false
-        },
-        {
-          "answer": "zółty",
+          "answer": "name",
           "is_correct": true
         },
         {
-          "answer": "biały",
+          "answer": "group",
+          "is_correct": false
+        },
+        {
+          "answer": "value",
+          "is_correct": false
+        },
+        {
+          "answer": "fieldset",
           "is_correct": false
         }
       ]
     },
     {
-      "question": "Jaki jest wynik: 2 + 2 x 2",
+      "question": "Jeżeli chcemy, aby pole w formularzu było wymagane, to nadajemy mu:",
       "answers": [
         {
-          "answer": "6",
+          "answer": "klasę 'required'",
+          "is_correct": false
+        },
+        {
+          "answer": "value",
+          "is_correct": false
+        },
+        {
+          "answer": "placeholder",
+          "is_correct": false
+        },
+        {
+          "answer": "atrybut 'required'",
           "is_correct": true
-        },
-        {
-          "answer": "8",
-          "is_correct": false
-        },
-        {
-          "answer": "10",
-          "is_correct": false
-        },
-        {
-          "answer": "4",
-          "is_correct": false
         }
       ]
     },
     {
-      "question": "Stolica Polski to:",
+      "question": "Kiedy czyszczona jest zawartość 'window.sessionStorage'?",
       "answers": [
         {
-          "answer": "Kraków",
-          "is_correct": false
-        },
-        {
-          "answer": "Biała Podlaska",
-          "is_correct": false
-        },
-        {
-          "answer": "Zakopane",
-          "is_correct": false
-        },
-        {
-          "answer": "Warszawa",
+          "answer": "Już w momencie zamknięcia karty w przeglądarce",
           "is_correct": true
+        },
+        {
+          "answer": "Dopiero w momencie zamknięcia przeglądarki",
+          "is_correct": false
+        },
+        {
+          "answer": "Dopiero w momencie restartu systemu",
+          "is_correct": false
+        },
+        {
+          "answer": "W momencie utraty połączenia internetowego",
+          "is_correct": false
         }
       ]
     },  {
-      "question": "Zielony owoc:",
+      "question": "Do typów złożonych w JavaScript zaliczany NIE jest:",
       "answers": [
         {
-          "answer": "Banan",
+          "answer": "Obiekt",
           "is_correct": false
         },
         {
-          "answer": "Mandarynka",
+          "answer": "Tablica",
           "is_correct": false
         },
         {
-          "answer": "Malina",
-          "is_correct": false
-        },
-        {
-          "answer": "Kiwi",
-          "is_correct": true
-        }
-      ]
-    }, {
-      "question": "Sąsiadem Polskie NIE jest:",
-      "answers": [
-        {
-          "answer": "Ukraina",
-          "is_correct": false
-        },
-        {
-          "answer": "Włochy",
+          "answer": "Ciąg znaków",
           "is_correct": true
         },
         {
-          "answer": "Białoruś",
-          "is_correct": false
-        },
-        {
-          "answer": "Słowacja",
+          "answer": "Funkcja",
           "is_correct": false
         }
       ]
     }, {
-      "question": "Wzór na pole trójkąta:",
+      "question": "Żeby z tablicy [1, 2, 3] w prosty sposób uzyskać tablicę [5, 6, 7] należy użyć:",
       "answers": [
         {
-          "answer": "1/2 * a * h",
+          "answer": "Array.prototype.map",
           "is_correct": true
         },
         {
-          "answer": "a * h",
+          "answer": "Array.prototype.filter",
           "is_correct": false
         },
         {
-          "answer": "2 * a * h",
+          "answer": "Array.prototype.some",
           "is_correct": false
         },
         {
-          "answer": "a * b",
+          "answer": "Array.prototype.reduce",
           "is_correct": false
         }
       ]
     }, {
-      "question": "8 x8 ",
+      "question": "Żeby z tablicy [1, 2, 3] w prosty sposób uzyskać tablicę [2] należy użyć:",
       "answers": [
         {
-          "answer": "60",
+          "answer": "Array.prototype.map",
           "is_correct": false
         },
         {
-          "answer": "62",
-          "is_correct": false
-        },
-        {
-          "answer": "64",
+          "answer": "Array.prototype.filter",
           "is_correct": true
         },
         {
-          "answer": "66",
+          "answer": "Array.prototype.some",
+          "is_correct": false
+        },
+        {
+          "answer": "Array.prototype.reduce",
           "is_correct": false
         }
       ]
     }, {
-      "question": "Liczba 10 w systemie binarnym to:",
+      "question": "Żeby z tablicy [1, 2, 3] w prosty sposób uzyskać sumę jej elementów należy użyć: ",
       "answers": [
         {
-          "answer": "1000",
+          "answer": "Array.prototype.map",
           "is_correct": false
         },
         {
-          "answer": "1100",
+          "answer": "Array.prototype.filter",
           "is_correct": false
         },
         {
-          "answer": "1010",
-          "is_correct": true
-        },
-        {
-          "answer": "1001",
-          "is_correct": false
-        }
-      ]
-    }, {
-      "question": "Najdłuższa rzeka Polski:",
-      "answers": [
-        {
-          "answer": "Bug",
+          "answer": "Array.prototype.some",
           "is_correct": false
         },
         {
-          "answer": "Odra",
-          "is_correct": false
-        },
-        {
-          "answer": "Warta",
-          "is_correct": false
-        },
-        {
-          "answer": "Wisła",
+          "answer": "Array.prototype.reduce",
           "is_correct": true
         }
       ]
     }, {
-      "question": "Do Korony Gór Polski NIE należy:",
+      "question": "W zakładce 'Network' w Chrome DevTools NIE można:",
       "answers": [
         {
-          "answer": "Śnieżka",
+          "answer": "Spowolnić swojego połączenie internetowe",
           "is_correct": false
         },
         {
-          "answer": "Kozi Wierch",
+          "answer": "Wgrać nowych plików",
           "is_correct": true
         },
         {
-          "answer": "Rysy",
+          "answer": "Zablokować pobieranie wybranych plików",
           "is_correct": false
         },
         {
-          "answer": "Tarnica",
+          "answer": "Zobaczyć kiedy i jakie pliki są ładowane przez stronę",
+          "is_correct": false
+        }
+      ]
+    }, {
+      "question": "Falsy values NIE jest:",
+      "answers": [
+        {
+          "answer": "null",
+          "is_correct": false
+        },
+        {
+          "answer": "undefined",
+          "is_correct": false
+        },
+        {
+          "answer": "0",
+          "is_correct": false
+        },
+        {
+          "answer": "'0'",
+          "is_correct": true
+        }
+      ]
+    }, {
+      "question": "Jakiej komendy należy użyć by wyśwotlić historię commitów?",
+      "answers": [
+        {
+          "answer": "git init",
+          "is_correct": false
+        },
+        {
+          "answer": "git diff",
+          "is_correct": false
+        },
+        {
+          "answer": "git log",
+          "is_correct": true
+        },
+        {
+          "answer": "git commit",
           "is_correct": false
         }
       ]

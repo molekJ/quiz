@@ -14,7 +14,7 @@ export const QuestionCard = ({
 
   return (
     <>
-      <Card className="splash-screen " mb-3>
+      <Card className="splash-screen ">
         <Card.Body>
           <Form.Group>
             <Form.Label>{question.question}</Form.Label>
