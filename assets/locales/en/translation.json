@@ -1,7 +1,6 @@
 {
-    "app_title": "Quizyyy",
+    "app_title": "Quiz",
     "language": "Language",
-    "welcome_message": "Welcome to React and react-i18next",
     "splash_welcome": "Welcome to the test",
     "splash_before_test": "There are many difficult questions ahead of you",
     "next_button": "Next",
@@ -12,8 +11,6 @@
     "amount_of_correct_answers": "Correct answers",
     "amount_of_wrong_answers": "Wrong answers",
     "percentage_scale": "Percentage scale",
-    "check_answers_button": "Check answers"
-
-
-
+    "check_answers_button": "Check answers",
+    "loading_questions": "Loading questions..."
   }

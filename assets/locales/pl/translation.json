@@ -1,7 +1,6 @@
 {
-    "app_title": "Quiz",
+    "app_title": "Test",
     "language": "Język",
-    "welcome_message": "Witamy w React i react-i18next",
     "splash_welcome": "Witamy w teście",
     "splash_before_test": "Przed Tobą wiele trudnych pytań.",
     "next_button": "Dalej",
@@ -12,6 +11,6 @@
     "amount_of_correct_answers": "Liczba poprawnych odpowiedzi",
     "amount_of_wrong_answers": "Liczba błędnych odpowiedzi",
     "percentage_scale": "Skala procentowa",
-    "check_answers_button": "Sprawdź odpowiedzi"
-
+    "check_answers_button": "Sprawdź odpowiedzi",
+    "loading_questions": "Ładowanie pytań..."
   }
